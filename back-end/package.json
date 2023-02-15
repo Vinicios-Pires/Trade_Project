@@ -1,12 +1,15 @@
 {
-  "name": "back-end",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+	"name": "back-end",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"build": "npx tsc",
+		"start": "node dist/src/server.js",
+		"dev": "ts-node src/server.ts",
+		"dev:test": "dotenv -e .env.test prisma migrate reset && dotenv -e .env.test prisma migrate dev && cross-env dotenv -e .env.test ts-node src/server.ts"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
 }
